@@ -1,0 +1,11 @@
+1. Create the Repository
+2. Add the collaborators
+3. Add the repo to the project
+4. Add workflows
+5. Prepare our Runner
+6. Prepare the image hub/Repository
+7. Developers can push their code
+------
+8. Testing ->
+    Before Build Process -> SonarQube
+    After Build Process -> Trivy
