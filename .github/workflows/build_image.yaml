@@ -9,7 +9,7 @@ jobs:
         steps:
         - name: "Checkout of the repository"
           uses: actions/checkout@v4
-
+         
         - name: "Build the image"
           run: |
             docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/simple_app_devops:1 .
