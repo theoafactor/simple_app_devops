@@ -9,6 +9,12 @@ jobs:
         steps:
         - name: "Checkout of the repository"
           uses: actions/checkout@v4
+
+        - name: "Generate a random number"
+          run: | 
+            #echo "version_number=$(echo $RANDOM)" >> $GITHUB_ENV
+            echo $GITHUB_ENV
+
          
         - name: "Build the image"
           run: |
