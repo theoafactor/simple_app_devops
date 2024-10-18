@@ -24,7 +24,7 @@ jobs:
 
         - name: "Update EC2"
           run: | 
-            echo $USERNAME
-            echo $HOSTNAME
-            ssh -o StrictHostKeyChecking=no ${{ secrets.AWS_EC2_USER }}@${{ secrets.AWS_IP }} "echo "hello-world" >> new_file.txt"
+
+            ssh -o StrictHostKeyChecking=no ${{ secrets.AWS_EC2_USER }}@${{ secrets.AWS_IP }} \ 
+            "echo "hello-world" >> new_file.txt"
              
