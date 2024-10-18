@@ -12,8 +12,8 @@ jobs:
 
         - name: "Generate a random number"
           run: | 
-            echo "version_number=$(echo $RANDOM)" >> $GITHUB_ENV
-            echo ${{ env.version_number }}
+            echo "version_number=$(echo $RANDOM)"
+            echo $version_number
 
          
         - name: "Build the image"
