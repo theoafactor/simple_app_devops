@@ -1,0 +1,23 @@
+name: "Deployment to EC2 Instance"
+on: 
+    workflow_run:
+        workflows: ["Building and Pushing Images TO Docker Hub"]
+        types: ["completed"]
+        branches: 
+        - master
+jobs:
+    deploy_app:
+        runs-on: ubuntu-latest
+        steps:
+        - name: "Checkout the repository"
+          uses: actions/checkout@v4
+          
+        - name: "Deploy to SSH"
+          env: 
+            PRIVATE_KEY: ${{ secrets.SSH_KEY }}
+            HOSTNAME: ${{ secrets.AWS_IP }}
+            USERNAME: ${{ secrets.AWS_EC2_USER }}
+        
+          run: |
+             echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+             ssh -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${HOSTNAME}

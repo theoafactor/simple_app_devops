@@ -1,4 +1,4 @@
-name: Building and Pushing Images TO Docker Hub
+name: "Building and Pushing Images TO Docker Hub"
 on: 
     push:
         branches:
