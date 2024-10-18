@@ -23,5 +23,8 @@ jobs:
             USERNAME: ${{ secrets.AWS_EC2_USER }}
 
         - name: "Update EC2"
-          run: ssh -o StrictHostKeyChecking=no $USERNAME@$HOSTNAME "echo "hello-world" >> new_file.txt"
+          run: | 
+            echo $USERNAME
+            echo $HOSTNAME
+            ssh -o StrictHostKeyChecking=no $USERNAME@$HOSTNAME "echo "hello-world" >> new_file.txt"
              
