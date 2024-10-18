@@ -23,3 +23,7 @@ jobs:
              ssh -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${HOSTNAME}
 
              sudo apt-get update
+
+             ## we will be pulling our image from DockerHub
+
+             sudo docker pull theoafactor/simple_app_devops:16180_Fri_18_UTC
